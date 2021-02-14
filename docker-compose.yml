@@ -1,0 +1,27 @@
+version: '3.7'
+
+x-db: &db
+  MYSQL_HOSTNAME: 'db'
+  MYSQL_PORT: 3306
+  MYSQL_USERNAME: &db_user 'coupon'
+  MYSQL_PASSWORD: &db_pass 'coupon'
+  MYSQL_DATABASE: &db_name 'coupon'
+  SQL_SERVER_LOCATION: '//db:3306'
+  SQL_SERVER_USERNAME: *db_user
+  SQL_SERVER_PASSWORD: *db_pass
+  SQL_SERVER_DATABASE: *db_name
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_LOCATION:
+      MYSQL_USER: *db_user
+      MYSQL_PASSWORD: *db_pass
+      MYSQL_DATABASE: *db_name
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_INITDB_SKIP_TZINFO: 1
+    ports:
+      - '127.0.0.1:3306:3306'
+

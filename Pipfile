@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+python-multipart = "*"
+pymysql = "*"
+sqlalchemy = "*"
+psycopg2 = "*"
+passlib = "*"
+python-jose = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+uvicorn= "uvicorn app.main:app --reload"
+main= "python startup.py"
