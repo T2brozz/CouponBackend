@@ -9,9 +9,10 @@ uvicorn = "*"
 python-multipart = "*"
 pymysql = "*"
 sqlalchemy = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
 passlib = "*"
 python-jose = "*"
+shortuuid = "*"
 
 [dev-packages]
 

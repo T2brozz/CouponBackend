@@ -20,4 +20,6 @@ async def upload_entry(category: str, price: float, date: datetime, file: Upload
     f.write(file_content)
     f.close()
     db.add(Bill(uuid=file_uuid, filepath=filename, price=price, date=date, category=category, user=current_user.name))
+    db.commit()
+
     return {"filename": file.filename}

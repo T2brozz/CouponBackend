@@ -7,10 +7,10 @@ from app.database import db
 
 
 class Bill(db.Base):
-    """User table"""
-    __tablename__ = "Bills"
+    """Bill table"""
+    __tablename__ = "bills"
     uuid: Union[Column, str] = Column(String(16), primary_key=True, unique=True)
-    filepath: Union[Column, str] = Column(String(20), nullable=False)
+    filepath: Union[Column, str] = Column(String(40), nullable=False)
     price: Union[Column, float] = Column(FLOAT, nullable=False)
     date: Union[Column, datetime] = Column(DateTime, nullable=False)
     category: Union[Column, str] = Column(String(20), nullable=False)
