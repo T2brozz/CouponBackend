@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Union
 
-from sqlalchemy import Column, String,FLOAT,DateTime
+from sqlalchemy import Column, String, FLOAT, DateTime
 
 from app.database import db
 
@@ -16,7 +16,8 @@ class Bill(db.Base):
     category: Union[Column, str] = Column(String(20), nullable=False)
     user: Union[Column, str] = Column(String(20), nullable=False)
 
-#db.Base.metadata.create_all(db.engine)
+
+# db.Base.metadata.create_all(db.engine)
 
 '''cartegories:
 freizeit
